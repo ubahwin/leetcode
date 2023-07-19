@@ -5,9 +5,8 @@ class Solution {
         for i in nums {
             if let value = hashTable[i] {
                 return true
-            } else {
-                hashTable[i] = true
             }
+            hashTable[i] = true
         }
         return false
     }
