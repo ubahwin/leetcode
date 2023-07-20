@@ -3,10 +3,8 @@ class Solution {
         var dict: [Int : [Int]] = [:]
         
         for i in 0..<nums.count {
-            if let value = dict[nums[i]] {
-                if value[0] == nums[i] {
-                    return [value[1], i]
-                }
+            if let value = dict[nums[i]], value[0] == nums[i] {
+                return [value[1], i]
             }
             dict[target - nums[i]] = [target - nums[i], i]
         }
