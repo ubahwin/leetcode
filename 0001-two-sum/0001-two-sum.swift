@@ -3,7 +3,7 @@ class Solution {
         var dict: [Int : Int] = [:] // [ target - currentValue : indexOfCurrentValue ]
         
         for i in 0..<nums.count {
-            var currentComplement = target - nums[i]
+            let currentComplement = target - nums[i]
             if let indexOfComplement = dict[nums[i]], nums[indexOfComplement] == currentComplement {
                 return [indexOfComplement, i]
             }
