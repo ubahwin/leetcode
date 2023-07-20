@@ -3,10 +3,11 @@ class Solution {
         var dict: [Int : Int] = [:] // [ target - currentValue : indexOfCurrentValue ]
         
         for i in 0..<nums.count {
-            if let a = dict[nums[i]], nums[a] == target - nums[i] {
-                return [a, i]
+            var currentComplement = target - nums[i]
+            if let indexOfComplement = dict[nums[i]], nums[indexOfComplement] == currentComplement {
+                return [indexOfComplement, i]
             }
-            dict[target - nums[i]] = i
+            dict[currentComplement] = i
         }
         return []
     }
