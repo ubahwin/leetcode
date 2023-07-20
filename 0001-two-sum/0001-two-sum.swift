@@ -5,8 +5,6 @@ class Solution {
         
         for i in 0..<nums.count {
             if let value = dict[nums[i]] {
-                print(value)
-                print(nums[i])
                 if value[0] == nums[i] {
                     return [value[1], i]
                 }
