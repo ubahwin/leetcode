@@ -28,22 +28,24 @@ class Solution {
         var queueQ: [TreeNode?] = [q]
 
         while !queueP.isEmpty {
-            var count = queueP.count
+            var count = queueP.count // lenght of some queue
 
-            if count != queueQ.count {
+            if count != queueQ.count { // check for diff lenght
                 return false
             }
 
-            for i in 0..<count {
-                if queueQ[i]?.val == queueP[i]?.val {
+            for i in 0..<count { 
+                if queueQ[i]?.val == queueP[i]?.val { // check for diff values
                     continue
                 }
                 return false
             }
 
-            var leftPIsEmpty = false
+            // flags for check left and right nodes on empty
+            var leftPIsEmpty = false 
             var rightPIsEmpty = false
 
+            // fill new queue with nodes
             var newQueueP = [TreeNode?]()
             for i in queueP {
                 if let left = i?.left {
@@ -67,10 +69,12 @@ class Solution {
                 } else { rightQIsEmpty = true }
             }
 
+            // if left node is empty, then other left node most be empty...
             if !(leftPIsEmpty == leftQIsEmpty && rightPIsEmpty == rightQIsEmpty) {
                 return false
             }
             
+            // replace old queue
             queueP = newQueueP
             queueQ = newQueueQ
         }
