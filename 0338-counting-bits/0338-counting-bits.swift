@@ -3,12 +3,12 @@ class Solution {
         var res = [Int]()
         
         for i in 0...n {
-            res.append(toBinary(i))
+            res.append(binaryUnitCount(i))
         }
         return res
     }
     
-    func toBinary(_ n: Int) -> Int {
+    func binaryUnitCount(_ n: Int) -> Int {
         var res = 0
         var num = n
         while num > 0 {
