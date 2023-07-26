@@ -1,9 +1,10 @@
 
 class NumArray {
+    var nums: [Int]
+
     init(_ nums: [Int]) {
         self.nums = nums
     }
-    var nums: [Int]
     
     func sumRange(_ left: Int, _ right: Int) -> Int {
         var res = 0
