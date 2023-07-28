@@ -13,11 +13,11 @@ class Solution {
         var current = head
         var tail = ListNode(-1)
         
-        tail.next = current
-        current = tail
+        tail.next = current 
+        current = tail // [ -1, head... ] start in head
         
         while current != nil {
-            if current?.next?.val == val {
+            if current?.next?.val == val {  // one step ahead :)
                 current?.next = current?.next?.next
             } else {
                 current = current?.next
