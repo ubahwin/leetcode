@@ -16,25 +16,16 @@
 class Solution {
     func minDepth(_ root: TreeNode?) -> Int {
         var queue = [TreeNode]()
-        
-        // if let left = root?.left {
-        //     queue.append(left)
-        // }
-        // if let right = root?.right {
-        //     queue.append(right)
-        // }
-                
         if let root = root {
             queue.append(root)
         }
+        
         var shortDepth = 0
         while !queue.isEmpty {
             var childs = [TreeNode]()
             
             shortDepth += 1
-            
-            for node in queue {
-
+            for node in queue { 
                 var isLeftNil = false, isRightNil = false
                 
                 if let left = node.left {
@@ -48,7 +39,7 @@ class Solution {
                     isRightNil = true 
                 }
                 
-                if isRightNil && isLeftNil {
+                if isRightNil && isLeftNil { // check for exist right and left node
                     return shortDepth
                 }
             }
