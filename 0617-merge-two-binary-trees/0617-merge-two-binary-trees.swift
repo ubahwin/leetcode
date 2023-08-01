@@ -15,11 +15,11 @@
  */
 class Solution {
     func mergeTrees(_ root1: TreeNode?, _ root2: TreeNode?) -> TreeNode? {
-        if root1 == nil, root2 == nil  {
+        if root1 == nil, root2 == nil {
             return nil
         }
         
-        let res = TreeNode((root1?.val ?? 0) + (root2?.val ?? 0)) 
+        let res = TreeNode((root1?.val ?? 0) + (root2?.val ?? 0)) // fill tree with dfs recursive
         res.left = mergeTrees(root1?.left, root2?.left)
         res.right = mergeTrees(root1?.right, root2?.right)
 
