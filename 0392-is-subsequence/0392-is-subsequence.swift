@@ -12,7 +12,6 @@ class Solution {
             }
             var sChar = s[s.index(s.startIndex, offsetBy: iS)]
             var tChar = t[t.index(t.startIndex, offsetBy: iT)]
-    //        print(sChar, tChar, iS, iT)
             if sChar != tChar {
                 iT += 1
             } else {
