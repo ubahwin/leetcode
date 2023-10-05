@@ -13,9 +13,7 @@ class Solution {
                 table[num] = false
                 continue
             }
-            if table[num]! {
-                table[num] = false
-            }
+            table[num] = false
         }
 
         for num in table {
