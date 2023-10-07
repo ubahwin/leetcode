@@ -13,9 +13,11 @@ class Solution {
                 let pointX = point[0]
                 let pointY = point[1]
 
+                // (x - x0) (y - y0)
                 let x = pointX - circleX
                 let y = pointY - circleY
 
+                // x^2 + y^2 <= R^2 -> point inside circle
                 let fun = Int(pow(Double(x), 2) + pow(Double(y), 2))
 
                 if fun <= Int(pow(Double(circleR), 2)) {
