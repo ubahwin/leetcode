@@ -1,6 +1,12 @@
 class Solution {
     func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -> Bool {
         let len = flowerbed.count
+        
+        /* 
+        if [1] [1,1] [1,0] [0,1] => n must be 0
+        
+        if [0,0] [0] => n must be 0 or 1
+        */
         if flowerbed == [1] || flowerbed == [1,1] || flowerbed == [0,1] || flowerbed == [1,0] {
             if n == 0 { return true }
             return false
