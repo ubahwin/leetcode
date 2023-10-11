@@ -1,24 +1,21 @@
 class Solution {
     func majorityElement(_ nums: [Int]) -> Int {
-        var table = [Int: Int]()
-        
-        for num in nums {
-            if table[num] != nil {
-                table[num]! += 1
-            } else {
-                table[num] = 1
-            }
-        }
-        
         var major = 0
-        var max = 0
-        for num in table {
-            if num.value > max {
-                max = num.value
-                major = num.key
+        var counter = 1
+        
+        for i in 1..<nums.count {
+            if nums[major] == nums[i] {
+                counter += 1
+            } else {
+                counter -= 1
+            }
+            
+            if counter == 0 {
+                major = i
+                counter = 1
             }
         }
         
-        return major
+        return nums[major]
     }
 }
