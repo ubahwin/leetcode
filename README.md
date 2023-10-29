@@ -1,2 +1,2 @@
 # leetcode
-Мои решения задач с LeetCode (https://leetcode.com/UbahWin/)
+Мои решения задач олимпиадных задач по информатике и с LeetCode (https://leetcode.com/UbahWin/)
