@@ -5,19 +5,7 @@ func relax(n: Int, d: Int) -> Int {
         start = 9 - d
     }
 
-    var res = 0
-    var count = 0
-
-    for _ in start...n {
-        if count == 6 {
-            count = 0
-            res += 1
-            continue
-        }
-        count += 1
-    }
-
-    return res
+    return (n - start) / 7
 }
 
 // Tests
