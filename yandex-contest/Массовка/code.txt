@@ -1,0 +1,25 @@
+let input = readLine()!.split(separator: " ").map { Int($0)! }
+let n = input[0]
+let m = input[1]
+var array = Array(repeating: 0, count: n)
+
+for _ in 0..<m {
+   let input = readLine()!.split(separator: " ").map { Int($0)! }
+   
+   let l = input[0] - 1
+   let r = input[1]
+   let count = input[2]
+   
+   if count > array[l] {
+       for i in l..<r {
+           array[i] = count
+       }
+   }
+   print(array)
+}
+
+var sum = 0
+for i in array {
+   sum += i
+}
+print(sum)

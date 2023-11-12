@@ -1,0 +1,63 @@
+let input = readLine()!.split(separator: " ").map { Int($0)! }
+let n = input[0]
+let m = input[1]
+
+var area = [[String]]()
+for _ in 0..<n {
+   let row = Array(readLine()!.map { String($0) })
+   area.append(row)
+}
+
+var maxKill = 0
+var maxKillPos = (0, 0)
+
+for i in 0..<n {
+   for j in 0..<m {
+       if area[i][j] == "." {
+           var curKill = 0
+           
+           var s = 0
+           // to left
+           s = j
+           while area[i][s] != "W" && s != 0 {
+               s -= 1
+               if area[i][s] == "B" {
+                   curKill += 1
+               }
+           }
+
+           //to right
+           s = j
+           while area[i][s] != "W" && s != m - 1 {
+               s += 1
+               if area[i][s] == "B" {
+                   curKill += 1
+               }
+           }
+           
+           // to up
+           s = i
+           while area[s][j] != "W" && s != 0 {
+               s -= 1
+               if area[s][j] == "B" {
+                   curKill += 1
+               }
+           }
+           
+           // to down
+           s = i
+           while area[s][j] != "W" && s != n - 1 {
+               s += 1
+               if area[s][j] == "B" {
+                   curKill += 1
+               }
+           }
+           if curKill > maxKill {
+               maxKill = curKill
+               maxKillPos = (i, j)
+           }
+       }
+   }
+}
+
+print(maxKillPos.0 + 1, maxKillPos.1 + 1)
